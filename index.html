@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/authcalculator/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth Calculator</title>
+    <script type="module" crossorigin src="/authcalculator/assets/index-LiGUB34d.js"></script>
+    <link rel="stylesheet" crossorigin href="/authcalculator/assets/index-IeBwNPhG.css">
+  </head>
+  <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          // includedLanguages: 'de,en' // remove this line if you want to include all languages
+        },'google_translate_element');
+      }
+      </script>
+      <p style="display: none;" class="chiFunFacts">你妈妈没有毛</p>
+      <div id="chat">
+      <h2>Chat For Real</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="user-input" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+      </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            document.getElementById("user-input").value = "";
+            displayMessage("You, a mortal: " + userInput);
+            var response = getChatbotResponse(userInput);
+            displayMessage("Chuck Norris: " + response);
+        }
+
+        function displayMessage(message) {
+            var para = document.createElement("p");
+            var node = document.createTextNode(message);
+            para.appendChild(node);
+            var element = document.getElementById("chat-box");
+            element.appendChild(para);
+            element.scrollTop = element.scrollHeight;
+        }
+
+        function getChatbotResponse(userInput) {
+            if (userInput.toLowerCase().includes("adhd")) {
+                return "People with ADHD may have trouble paying attention, controlling impulsive behaviors (may act without thinking about what the result will be), or be overly active. Although ADHD can't be cured, it can be successfully managed and some symptoms may improve as the child ages.";
+            } else if(userInput.toLowerCase().includes("chuck, what can you do")){
+                return "Count to infinity. Twice. Divide by zero and get a result. Win a game of Connect Four in three moves. Sneeze with his eyes open. Slam a revolving door. Part the Red Sea. Find the last digit of pi. Roundhouse kick his reflection and win. Run around the world and punch himself in the back of the head. Make a fire by rubbing two ice cubes together. Make onions cry. Unscramble a scrambled egg. Build a snowman out of rain. Beat the sun in a staring contest. Speak braille. Bite a shark and win. Make a Happy Meal cry. Remember the future. High-five the Eiffel Tower. Delete the Recycling Bin."
+            }else {
+                return "ok";
+            }
+        }
+    </script>
+      <audio autoplay loop>
+        <source src="/authcalculator/assets/WheelsOn-the-Bus.1-4KXQ5zF-.mp3">
+      </audio>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <div id="app"></div>
+      <embed src="http://www.staggeringbeauty.com/" width="100%" height="35%" style="position: fixed;bottom: 0; right: 0;"/>
+      <embed src="https://www.myinstants.com/en/index/us/" width="100%" style="position: fixed; bottom: 0; left: 0;"/>
+  </body>
+</html>
