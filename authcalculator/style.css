@@ -10,3 +10,8 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
+
+#counter{
+  position: absolute;
+  padding: 0.1vw;
+}
