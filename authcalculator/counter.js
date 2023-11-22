@@ -4,9 +4,66 @@ import {
     getAuth,
     onAuthStateChanged,
     signInWithPopup,
-    RecaptchaVerifier
+    RecaptchaVerifier,
+    signInWithPhoneNumber
 } from "firebase/auth";
-// export let user = "";
+
+var audioContext = new AudioContext();
+var audioBuffer;
+var source;
+var intervalId; 
+
+function loadSound(url) {
+  return fetch(url)
+    .then(response => response.arrayBuffer())
+    .then(buffer => audioContext.decodeAudioData(buffer))
+    .then(decodedData => {
+      audioBuffer = decodedData;
+    });
+}
+
+function playSound() {
+  if (!audioBuffer) {
+    return;
+  }
+
+  var bps = document.getElementById("bpsInput").value;
+  var interval = 1 / bps * 1000;
+
+  
+  stopSound();
+
+  source = audioContext.createBufferSource();
+  source.buffer = audioBuffer;
+  source.connect(audioContext.destination);
+  source.start();
+
+  intervalId = setInterval(function() {
+    source.stop();
+    source.disconnect();
+
+    source = audioContext.createBufferSource();
+    source.buffer = audioBuffer;
+    source.connect(audioContext.destination);
+    source.start();
+  }, interval);
+}
+
+function stopSound() {
+  if (source) {
+    clearInterval(intervalId);
+    source.stop();
+    source.disconnect();
+  }
+}
+
+loadSound("./metronomeWood.wav")
+  .then(function() {
+    console.log("Sound file loaded successfully.");
+  })
+  .catch(function(error) {
+    console.log("Error loading sound file:", error);
+  });
 
 const firebaseConfig = {
   apiKey: "AIzaSyAyJkWTGjQuOed4AVSyQtyLyXYm0efLUKQ",
@@ -21,8 +78,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
 var user = auth.currentUser;
-window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {});
+// window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {});
 
     let userLogin = () => {
         signInWithPopup(auth, new GoogleAuthProvider()).then((result) => {
@@ -61,6 +119,7 @@ export function setupCounter(element) {
     setCounter(counter + 1);
     moveItem(); 
     userLogin();
+    playSound();
   });
 
   setCounter(0);

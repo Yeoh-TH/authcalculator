@@ -1,14 +1,6 @@
 import './style.css'
 import { setupCounter } from './counter.js'
 import { initializeApp } from "firebase/app";
-import {
-    GoogleAuthProvider,
-    getAuth,
-    onAuthStateChanged,
-    signInWithPopup,
-    RecaptchaVerifier
-} from "firebase/auth";
-// export let user = "";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAyJkWTGjQuOed4AVSyQtyLyXYm0efLUKQ",
@@ -20,29 +12,13 @@ const firebaseConfig = {
   measurementId: "G-V133K4J603"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-var user = auth.currentUser;
-
-    let userLogin = () => {
-        signInWithPopup(auth, new GoogleAuthProvider()).then((result) => {
-            user = result.user;
-            window.location = "#/";
-        });
-    };
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-          console.log("You are logged in as", user);
-          loadSaves();
-      }
-  });
-
 
 document.querySelector('#app').innerHTML = `
   <div >
     <h1>Calculator go brrrrr</h1>
     <div class="card">
-      <button id="counter" type="button" onClick={() => userLogin()}></button>
+      <label for="counter"></label>
+      <button id="counter" type="button"></button>
     </div>
   </div>
 `
