@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/authcalculator/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auth Calculator</title>
-    <script type="module" crossorigin src="/authcalculator/assets/index-sQSjM1ch.js"></script>
-    <link rel="stylesheet" crossorigin href="/authcalculator/assets/index-PA4u0VZU.css">
+    <script type="module" crossorigin src="/authcalculator/assets/index-pHTwkmMO.js"></script>
+    <link rel="stylesheet" crossorigin href="/authcalculator/assets/index-GUsNYOQV.css">
   </head>
   <body>
     <audio autoplay loop>
@@ -28,6 +28,7 @@
       <input type="text" id="user-input" placeholder="Type a message...">
     <button onclick="sendMessage()">Send</button>
       </div>
+      <img id="skibidi" src="/authcalculator/skibidi.jpg" width="300" id="skibidi"></img>
       
     <script>
         function sendMessage() {
@@ -67,6 +68,8 @@
             }
             else if(userInput.toLowerCase().includes("gay")){
               return"no u"
+            }else if(userInput.toLowerCase().includes("skibidi")){
+              document.getElementById("skibidi").style.display = "block";
             }
             else {
                 return "ok";
