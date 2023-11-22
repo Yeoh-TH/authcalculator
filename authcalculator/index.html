@@ -6,44 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body onload="signInWithEmailAndPassword()">
+  <body>
     <div id="app"></div>
     <script type="module" src="/main.js"></script>
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyAyJkWTGjQuOed4AVSyQtyLyXYm0efLUKQ",
-        authDomain: "authcalculator.firebaseapp.com",
-        projectId: "authcalculator",
-        storageBucket: "authcalculator.appspot.com",
-        messagingSenderId: "546894117488",
-        appId: "1:546894117488:web:7bd4612fe2741260dbd2b5",
-        measurementId: "G-V133K4J603"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+      // https://cornhub.website/
 
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-        });
 
 
     </script>
