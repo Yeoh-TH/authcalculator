@@ -13,5 +13,47 @@
 
 #counter{
   position: absolute;
-  padding: 0.1vw;
+  padding: 4vw;
+  font-size: 4vw;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+h2{
+  color: brown;
+  font-size: 2vw;
+  text-align: center;
+}
+
+#chat{
+  background-color:aliceblue;
+  padding: 2vw;
+  font-size: 4vw;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+p{
+  font-size: 1vw;
+  max-width:200px;
+  word-wrap:break-word;
+}
+
+#chat-box{
+  overflow-y: scroll;
+  overflow-x: scroll;
+  max-height: 20vw;
+}
+
+@media only screen and (max-width: 500px){
+  h1{
+    font-size: 4vw;
+  }
+  p{
+    font-size: 4vw;
+    max-width:200px;
+    word-wrap:break-word;
+  }
 }

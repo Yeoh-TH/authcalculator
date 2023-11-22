@@ -57,7 +57,7 @@ function stopSound() {
   }
 }
 
-loadSound("./metronomeWood.wav")
+loadSound("vine-boom.mp3")
   .then(function() {
     console.log("Sound file loaded successfully.");
   })
@@ -100,7 +100,7 @@ export function setupCounter(element) {
 
   const setCounter = (count) => {
     counter = count;
-    element.innerHTML = `+ 1 <br/>${counter}`;
+    element.innerHTML = `+1 <br/>${counter}`;
   };
 
   function moveItem() {
@@ -111,8 +111,8 @@ export function setupCounter(element) {
 
   let currentLeft = parseInt(element.style.left);
   let currentRight = parseInt(element.style.right);
-  element.style.left = currentLeft + getRandomInt(100) + 'vw';
-  element.style.right = currentRight + getRandomInt(100) + 'vw';
+  element.style.left = currentLeft + getRandomInt(10) + 'vw';
+  element.style.right = currentRight + getRandomInt(10) + 'vw';
 }
 
   element.addEventListener('click', () => {
