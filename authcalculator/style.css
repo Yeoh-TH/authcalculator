@@ -47,6 +47,19 @@ p{
   max-height: 20vw;
 }
 
+.tenor-gif-embed{
+  max-width: 30vw;
+  position: absolute;
+  text-align: center;
+  margin-left: 15vw;
+}
+
+#skibidi{
+  display: none;
+  position: absolute;
+  align-self: center;
+}
+
 @media only screen and (max-width: 500px){
   h1{
     font-size: 4vw;

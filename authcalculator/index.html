@@ -7,6 +7,9 @@
     <title>Auth Calculator</title>
   </head>
   <body>
+    <audio autoplay loop>
+      <source src="/WheelsOn-the-Bus.mp3">
+    </audio>
     <div id="google_translate_element"></div>
     <script type="text/javascript">
       function googleTranslateElementInit() {
@@ -23,7 +26,8 @@
       <input type="text" id="user-input" placeholder="Type a message...">
     <button onclick="sendMessage()">Send</button>
       </div>
-
+      <img id="skibidi" src="/skibidi.jpg" width="300" id="skibidi"></img>
+      
     <script>
         function sendMessage() {
             var userInput = document.getElementById("user-input").value;
@@ -45,19 +49,35 @@
         function getChatbotResponse(userInput) {
             if (userInput.toLowerCase().includes("adhd")) {
                 return "People with ADHD may have trouble paying attention, controlling impulsive behaviors (may act without thinking about what the result will be), or be overly active. Although ADHD can't be cured, it can be successfully managed and some symptoms may improve as the child ages.";
-            } else if(userInput.toLowerCase().includes("chuck, what can you do")){
+            } else if(userInput.toLowerCase().includes("what can you do")){
                 return "Count to infinity. Twice. Divide by zero and get a result. Win a game of Connect Four in three moves. Sneeze with his eyes open. Slam a revolving door. Part the Red Sea. Find the last digit of pi. Roundhouse kick his reflection and win. Run around the world and punch himself in the back of the head. Make a fire by rubbing two ice cubes together. Make onions cry. Unscramble a scrambled egg. Build a snowman out of rain. Beat the sun in a staring contest. Speak braille. Bite a shark and win. Make a Happy Meal cry. Remember the future. High-five the Eiffel Tower. Delete the Recycling Bin."
-            }else {
+            }else if(userInput.toLowerCase().includes("china")){
+              var chingChong = new Howl({
+            src: ['/Chinese-Meme-Song.mp3'],
+            autoplay: true,
+            loop: true,
+            volume: 1,
+        });
+              chingChong.play()
+              return"Sure, we must repect our great and almighty leader"
+            }
+            else if(userInput.toLowerCase().includes("suck my balls")){
+              return"I would love to, see you tonight 😘"
+            }
+            else if(userInput.toLowerCase().includes("gay")){
+              return"no u"
+            }else if(userInput.toLowerCase().includes("skibidi")){
+              document.getElementById("skibidi").style.display = "block";
+            }
+            else {
                 return "ok";
             }
         }
     </script>
-      <audio autoplay loop>
-        <source src="public/WheelsOn-the-Bus.1.mp3">
-      </audio>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       <div id="app"></div>
-      <script type="module" src="/main.js"></script>
+      <script type="module" src="/main.js" ></script>
       <embed src="http://www.staggeringbeauty.com/" width="100%" height="35%" style="position: fixed;bottom: 0; right: 0;"/>
       <embed src="https://www.myinstants.com/en/index/us/" width="100%" style="position: fixed; bottom: 0; left: 0;"/>
   </body>
